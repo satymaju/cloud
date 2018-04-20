@@ -1,0 +1,45 @@
+STORY: As a webshop admin, I want a configuration to identify when the capture should be done for payments done via credit card for trade account user, so that webshop can initiate the capture based on their process
+
+USER_FLOW:
+N/A
+
+WIREFRAMES:
+N/A
+
+ACCEPTANCE CRITERIA:
+# Configuration is available to identify when the capture of credit card funds to be done for trade account user (configuration is needed at Banner level)
+# Configuration can either be after order is placed with ERP or after the goods are shipped
+# For CA it is set to after order is placed with ERP and for FR it is is set to after goods are shipped 
+# Changes are applied for payment done via Adyen
+# For configuration set to after goods are shipped, capture will be initiated by ERP, no changes are needed on Hybris side
+# Regression:
+#* In scenario where addOrder fails, existing process is applied (if it fails, capture is not done and auth is cancelled)
+#* In scenario where addOrder responds successfully or time out, it will be considered order was placed and capture request will be sent 
+
+SEE CONFLUENCE FOR BUSINESS RULES FOR RELEASE 16.3 AND LATER
+
+NOTES: 
+> ANALYSIS (Akbar):
+
+> PO ():
+
+> UX ():
+
+> TECHNICAL (): 
+1. We will still  send the capture data to the ERP in add order WS just like how we are sending in FR. is this a problem for CA?
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GIVEN: Webshop accepts credit card payment for orders placed by trade account user
+WHEN: Webshop wants to set up the capture timing for the payment
+THEN: Configuration is available to set up the capture either after order is placed with ERP or at the time of shipment
+
+
+
+<a href="https://www.arsenal.com/" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://www.arsenal.com/&amp;ved=0ahUKEwjfoPqUiMTaAhWBNI8KHWVTCdsQFghvMAQ">Arsenal.com: Homepage</a>
+
+https://groups.google.com/forum/#!topic/robotframework-users/63wL6CAuXeE
+
+100476377
+100460300
